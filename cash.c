@@ -5,16 +5,20 @@
 int main (void)
 {
     float dollars;
+    
+    //loop until the user provides a positive float-pointing value
     do
     {
         dollars = get_float("change owed: ");
     }
     while (dollars <= 0.0);
     
+    //round the positive floating-point value into integer
     int cents = round(dollars * 100);
     bool flag = false;
     int counter = 0;
     
+    //loop in a such way that the user receives back few coins as much as possible
     while (!flag)
     {
         if (cents >= 25)
@@ -43,6 +47,7 @@ int main (void)
         }
     }
     
+    //print the number of coins provided as change
     printf ("%d\n", counter);
     
 }
